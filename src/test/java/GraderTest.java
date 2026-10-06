@@ -46,7 +46,7 @@ class GraderTest {
 
     @Test
     void testDetermineLetterGrade_ExactBoundaries() {
-        assertEquals('F', grader.determineLetterGrade(60));
+        assertEquals('F', grader.determineLetterGrade(59));
         assertEquals('D', grader.determineLetterGrade(69));
         assertEquals('C', grader.determineLetterGrade(79));
         assertEquals('B', grader.determineLetterGrade(89));
