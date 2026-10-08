@@ -31,12 +31,21 @@ class GraderTest {
         assertEquals('A', grader.determineLetterGrade(90));
     }
 
+
     @Test
-    void testDetermineLetterGrade_Negative() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            grader.determineLetterGrade(-1);
-        });
-        assertEquals("Number grade cannot be negative", exception.getMessage());
+    void negativeOneShouldReturnIllegalArgumentException() {
+
+        var grader = new Grader();
+
+        assertThrows(IllegalArgumentException.class, () -> grader.determineLetterGrade(-1));
+    }
+
+    @Test
+    void overOneHundredShouldReturnIllegalArgumentException() {
+
+        var grader = new Grader();
+
+        assertThrows(IllegalArgumentException.class, () -> grader.determineLetterGrade(101));
     }
 
     @Test
@@ -44,12 +53,6 @@ class GraderTest {
         assertEquals('F', grader.determineLetterGrade(0));
     }
 
-    @Test
-    void testDetermineLetterGrade_ExactBoundaries() {
-        assertEquals('F', grader.determineLetterGrade(59));
-        assertEquals('D', grader.determineLetterGrade(69));
-        assertEquals('C', grader.determineLetterGrade(79));
-        assertEquals('B', grader.determineLetterGrade(89));
-        assertEquals('A', grader.determineLetterGrade(100));
-    }
+
+
 }

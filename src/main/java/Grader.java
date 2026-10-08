@@ -1,7 +1,7 @@
 public class Grader {
 
     public char determineLetterGrade(int numberGrade) {
-        if (numberGrade < 0) throw new IllegalArgumentException("Number grade cannot be n negative");
+        if (numberGrade < 0) throw new IllegalArgumentException("Number grade cannot be negative");
 
         else if (numberGrade < 60) return 'F';
 
@@ -11,6 +11,8 @@ public class Grader {
 
         else if (numberGrade < 90) return 'B';
 
-        else return 'A';
+        else if (numberGrade <= 100)return 'A';
+
+        else throw new IllegalArgumentException("Number grade cannot be over one hundred");
     }
 }
