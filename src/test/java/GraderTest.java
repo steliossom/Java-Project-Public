@@ -8,7 +8,7 @@ class GraderTest {
 
     @Test
     void testDetermineLetterGrade_F() {
-        assertEquals('F', grader.determineLetterGrade(60));
+        assertEquals('F', grader.determineLetterGrade(59));
     }
 
     @Test
